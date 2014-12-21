@@ -1,6 +1,6 @@
 {
   "name": "http-adventure",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Learn node's `http` module",
   "main": "index.js",
   "bin": {
