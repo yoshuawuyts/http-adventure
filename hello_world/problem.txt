@@ -1,0 +1,71 @@
+Welcome traveler to http-adventure!
+
+Today we're going to blast you through the basics of node's http module. Before
+we get you started it's recommended you have a new directory with an `index.js`
+in it. Your folder structure should look somewhat like this.
+
+    http-adventure/
+    └── index.js
+
+All set? On to the next part!
+
+# hello world!
+Node's `http` module is part of the standard library, and can be accessed
+through `require('http')`. It's common to name the values after the module name
+so assign the `require` statement to `const http`.
+
+With the `http` module in, it's time we create a server. The `http` module
+has multiple methods on it, but the one we're looking for is `.createServer()`.
+
+## var server = createServer()
+`createServer()` takes a single function (callback) as an argument which we'll
+name `req` and `res`. This function is reponsible for handling all requests and
+responses on the server. Many frameworks are just a function that gets passed
+into `http.createServer`.
+
+Your server should now look somewhat like this:
+
+    module.exports = http.createServer(function(req, res) {
+      // no operations yet (noop)
+    })
+
+If callbacks are still a little strange to you it's recommended you give the
+`javascripting` workshop a go, since in upcoming chapters we'll be diving into
+some trickier concepts such as streams and event emitters which make use of
+callbacks.
+
+Ok, now that we have your http server set, we should make the server respond
+to incoming requests with some text. You can end a response by calling
+`res.end()` and passing it a string. In this case pass `'hello world'` to
+`res.end()`. By default node sets the `statusCode` of all responses to `200`,
+and sets the `Content-Type` header to `text/plain`.
+
+Now that our server knows what to respond to incoming requests, it's time we
+make it listen to incoming requests. To do this we must open up a port and bind
+our server to this.
+
+## server.listen()
+`http.createServer()` returns a server instance (object) with methods attached
+to it. Call the server and pass it `1337` as an argument to open up on that port.
+
+Now that we've got a server that responds to incoming requests, it's time to
+expose it to other modules so we can verify it.
+
+Set `module.exports = server`, to expose it.
+
+## Task:
+Create a server that listens to port 1337 and responds with the message
+"hello world" to every request.
+
+When you are done, you must run:
+
+    $ http-adventure verify program.js
+
+to proceed. Your program will be tested, a report will be generated, and the lesson will be marked 'completed' if you are successful.
+
+-------------------------------------------------------------------------------
+
+ » To print these instructions again, run: http-adventure print
+ » To execute your program in a test environment, run: http-adventure run program.js
+ » To verify your program, run: http-adventure verify program.js
+ » For help run: http-adventure help

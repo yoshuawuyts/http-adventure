@@ -1,0 +1,39 @@
+{
+  "name": "http-adventure",
+  "version": "1.0.0",
+  "description": "Learn node's `http` module",
+  "main": "index.js",
+  "bin": {
+    "http-adventure": "./bin.js"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test tape test.js | tap-bail |tap-spec",
+    "test-cov": "NODE_ENV=test istanbul cover test.js",
+    "lint": "eslint .",
+    "start": "node ./bin.js"
+  },
+  "repository": "yoshuawuyts/http-adventure",
+  "keywords": [
+    "nodeschool",
+    "workshop",
+    "http"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "adventure": "^2.8.0",
+    "servertest": "^1.1.1"
+  },
+  "devDependencies": {
+    "adventure-verify": "^2.2.0",
+    "eslint": "^0.10.2",
+    "istanbul": "^0.3.5",
+    "tap-bail": "0.0.0",
+    "tap-spec": "^2.1.2",
+    "tape": "^3.0.3"
+  },
+  "files": [
+    "LICENSE",
+    "index.js",
+    "README.md"
+  ]
+}
